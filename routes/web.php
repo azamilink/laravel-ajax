@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\FormController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ChartController;
 use App\Http\Controllers\StudentController;
@@ -27,3 +28,7 @@ Route::get('posts', [PostController::class, 'index']);
 // chart
 Route::get('chart', [ChartController::class, 'index']);
 Route::get('barchart', [ChartController::class, 'barchart']);
+
+// Multi Form
+Route::get('form', [FormController::class, 'index'])->name('form');
+Route::post('form', [FormController::class, 'formSubmit'])->name('form.submit');
